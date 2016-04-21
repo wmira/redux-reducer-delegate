@@ -1,0 +1,34 @@
+{
+  "name": "redux-reducer-composer",
+  "version": "0.0.1",
+  "description": "Dispatches reduce calls to sub reducers",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register --recursive "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmira/redux-reducer-composer.git"
+  },
+  "keywords": [
+    "redux",
+    "reducer",
+    "compose"
+  ],
+  "author": "Warren Mira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmira/redux-reducer-composer/issues"
+  },
+  "homepage": "https://github.com/wmira/redux-reducer-composer#readme",
+  "dependencies": {
+    "redux": "^3.5.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.7",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "mocha": "^2.4.5",
+    "should": "^8.3.1"
+  }
+}

@@ -1,0 +1,2 @@
+
+import { createReducersMap } from '../src';
