@@ -63,6 +63,12 @@ describe('composeReducer', () => {
             should(state.count).be.exactly(0);
         });
 
+        it('returns initial state' , () => {
+            const reducer = createReducerDelegate({ sample: () =>{} }, { init: 0 } );
+            const newState = reducer(undefined, { type: 'UNKNOWN' });
+            should(newState.init).be.exactly(0);
+        });
+
     });
 
 });

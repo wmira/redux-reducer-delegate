@@ -26,8 +26,8 @@ export const createReducersMap = (reducers, keyPrefix) => {
  * Composes reducers by having its type mapping
  *
  */
-export const createReducerDelegate = (reducersMapping = {}) =>
-    (state, arg) => {
+export const createReducerDelegate = (reducersMapping = {} , initialState ) =>
+    (state = initialState, arg) => {
         const { type } = arg;
         const subReducer = reducersMapping[type];
         if ( subReducer ) {
@@ -43,6 +43,7 @@ export const createReducerDelegate = (reducersMapping = {}) =>
                 return freeze({ ...state, ...toMerge });
             }
         }
+        
         return state;
     };
 
