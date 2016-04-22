@@ -1,6 +1,6 @@
 {
   "name": "redux-reducer-delegate",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Delegates reducer calls to sub reducers",
   "main": "lib/index.js",
   "scripts": {

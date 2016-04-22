@@ -28,14 +28,15 @@ export const createReducersMap = (reducers, keyPrefix) => {
  */
 export const createReducerDelegate = (reducersMapping = {} , initialState ) =>
     (state = initialState, arg) => {
-        const { type } = arg;
+        const { type, ...subArg } = arg;
         const subReducer = reducersMapping[type];
         if ( subReducer ) {
             var toMerge;
             if ( isSortOfFSA(arg) ) {
                 toMerge = subReducer( state, arg.payload || {} );
             } else {
-                const { type, ...subArg } = arg; //eslint-disable-line
+                //const { type, ...subArg } = arg; //eslint-disable-line
+                //console.log('sub arg', subArg);
                 toMerge = subReducer( state, subArg || {} );
             }
             //if we have something
@@ -43,7 +44,7 @@ export const createReducerDelegate = (reducersMapping = {} , initialState ) =>
                 return freeze({ ...state, ...toMerge });
             }
         }
-        
+
         return state;
     };
 
