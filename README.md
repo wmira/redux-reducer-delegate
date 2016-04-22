@@ -1,6 +1,8 @@
 redux-reducer-delegate
 ======================
 
+[![npm version](https://badge.fury.io/js/redux-reducer-delegate.svg)](https://badge.fury.io/js/redux-reducer-delegate)
+
 A way to create reducers by composing sub-reducers. This prevent the switch statements.
 
 
