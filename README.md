@@ -19,7 +19,7 @@ A way to create reducers by composing sub-reducers. This prevent the switch stat
 
 ```javascript
 
-import { createReducersMap, composeReducer } from '../';
+import { createReducersMap, composeReducer } from 'redux-reducer-delegate';
 
 /**
  * Note here that you will only return the current state that you would like to replace
