@@ -35,17 +35,16 @@ export const createReducerDelegate = (reducersMapping = {} , initialState ) =>
             if ( isSortOfFSA(arg) ) {
                 toMerge = subReducer( state, arg.payload || {} );
             } else {
-                //const { type, ...subArg } = arg; //eslint-disable-line
-                //console.log('sub arg', subArg);
                 toMerge = subReducer( state, subArg || {} );
             }
             //if we have something
             if ( toMerge ) {
+                //to some extent freeze it
                 return freeze({ ...state, ...toMerge });
             }
         }
 
-        return state;
+        return state || {};
     };
 
 

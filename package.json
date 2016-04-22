@@ -1,7 +1,7 @@
 {
   "name": "redux-reducer-delegate",
-  "version": "0.0.5",
-  "description": "Delegates reducer calls to sub reducers",
+  "version": "0.0.6",
+  "description": "Delegates reducer calls to sub helpers",
   "main": "lib/index.js",
   "scripts": {
     "dist": "babel src/index.js -o lib/index.js",
@@ -14,7 +14,9 @@
   "keywords": [
     "redux",
     "reducer",
-    "compose"
+    "compose",
+    "delegate",
+    "react redux"
   ],
   "author": "Warren Mira",
   "license": "MIT",

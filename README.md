@@ -50,8 +50,19 @@ const mapping = createReducersMap([addTodo, removeTodo]);
 /**
  * Finally compose the reducer
  */
-export default createReducerDelegate(mapping);
+export const reducer = createReducerDelegate(mapping);
 
+
+```
+
+## Passing Initial state
+
+createReducerDelegate can use an initial state by passing it as a second argument to createReducerDelegate. By
+default it is going to return an empty object literal.
+
+```javascript
+
+createReducerDelegate(mapping, { count: 0 });
 
 ```
 
