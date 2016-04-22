@@ -1,4 +1,4 @@
-redux-reducer-composer
+redux-reducer-delegate
 ======================
 
 A way to create reducers by composing sub-reducers. This prevent the switch statements.
@@ -6,7 +6,13 @@ A way to create reducers by composing sub-reducers. This prevent the switch stat
 
 #Installation
 
-Usage:
+```javascript
+
+    npm install redux-reducer-delegate
+
+```
+
+#Usage
 
 ```javascript
 
@@ -45,3 +51,7 @@ export default composeReducer(mapping);
 
 
 ```
+
+#Test
+
+npm run test

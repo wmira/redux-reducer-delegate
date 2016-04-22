@@ -10,30 +10,33 @@ const { freeze, keys: objectKeys } = Object;
  */
 export const createReducersMap = (reducers, keyPrefix) => {
     const keys = objectKeys(reducers);
+
     const mapping = {};
     const prefix = keyPrefix || '';
+    const isArray = Array.isArray(reducers); //reducers can be an object or array
+
     keys.forEach(key => {
-        const reducerFunc = reducers[key];
-        //reducers can be an object or array
-        mapping[typeof key === 'number' ? prefix + reducerFunc.name : key]  = reducerFunc;
+        const reducerFunc = reducers[isArray ? parseInt(key) : key];
+        mapping[prefix + ( isArray === true? reducerFunc.name :  key )]  = reducerFunc;
     });
+    return mapping;
 };
 
 /**
  * Composes reducers by having its type mapping
  *
  */
-export const composeReducer = (reducersMapping = {}) =>
+export const createReducerDelegate = (reducersMapping = {}) =>
     (state, arg) => {
         const { type } = arg;
         const subReducer = reducersMapping[type];
         if ( subReducer ) {
             var toMerge;
             if ( isSortOfFSA(arg) ) {
-                toMerge = subReducer(arg.payload, state);
+                toMerge = subReducer( state, arg.payload || {} );
             } else {
                 const { type, ...subArg } = arg; //eslint-disable-line
-                toMerge = subReducer(subArg, state);
+                toMerge = subReducer( state, subArg || {} );
             }
             //if we have something
             if ( toMerge ) {
@@ -42,3 +45,6 @@ export const composeReducer = (reducersMapping = {}) =>
         }
         return state;
     };
+
+
+export default { createReducersMap, createReducerDelegate };

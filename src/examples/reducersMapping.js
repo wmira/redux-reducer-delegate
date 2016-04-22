@@ -1,13 +1,13 @@
 import { createReducersMap, composeReducer } from '../';
 
-export const addTodo = ( { todo }, state ) => {
+export const addTodo = ( state, { todo } ) => {
     if ( todo ) {
         const { todos: currentTodos } = state;
         return { todos: currentTodos.concat(todo) };
     }
 };
 
-export const removeTodo = ( { todo }, state ) => {
+export const removeTodo = ( state, { todo } ) => {
     const { todos: currentTodos } = state;
     if ( todo ) {
         const idx = currentTodos.indexOf(todo);
