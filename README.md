@@ -19,7 +19,7 @@ A way to create reducers by composing sub-reducers. This prevent the switch stat
 
 ```javascript
 
-import { createReducersMap, composeReducer } from 'redux-reducer-delegate';
+import { createReducersMap, createReducerDelegate } from 'redux-reducer-delegate';
 
 /**
  * Note here that you will only return the current state that you would like to replace
@@ -50,7 +50,7 @@ const mapping = createReducersMap([addTodo, removeTodo]);
 /**
  * Finally compose the reducer
  */
-export default composeReducer(mapping);
+export default createReducerDelegate(mapping);
 
 
 ```

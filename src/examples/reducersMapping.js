@@ -1,4 +1,4 @@
-import { createReducersMap, composeReducer } from '../';
+import { createReducersMap, createReducerDelegate } from '../';
 
 export const addTodo = ( state, { todo } ) => {
     if ( todo ) {
@@ -17,4 +17,4 @@ export const removeTodo = ( state, { todo } ) => {
 
 const mapping = createReducersMap([addTodo, removeTodo]);
 
-export default composeReducer(mapping);
+export default createReducerDelegate(mapping);
