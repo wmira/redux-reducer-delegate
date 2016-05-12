@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <style>
+        html,body {
+            color : #333;
+            background: #f3f5f8;
+            font-family: "Helvetica", sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .sw-search-res {
+            border: 1px solid #E5E5E5;
+            overflow: auto;
+            position: absolute;
+            background: #FFF;
+            width: 400px;
+            z-index: 100;
+        }
+        .sw-search-item {
+            border-bottom: 1px solid #E5E5E5;
+            padding: 4px 6px;
+            overflow: auto;
+            cursor: pointer;
+        }
+        .stock-remove {
+            color: #BDC3C7;
+        }
+        .stock-remove:hover {
+            color: #95A5A6 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div id='app' style='padding: 20px; display: flex; flex-direction: column;'></div>
+    <script type="application/javascript" src="bundle.js"></script>
+</body>
+</html>
